@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1370px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+[class*='__container'] {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
