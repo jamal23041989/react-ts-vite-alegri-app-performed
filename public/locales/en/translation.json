@@ -1,0 +1,54 @@
+{
+  "header": {
+    "link1": "Women",
+    "link2": "Men",
+    "link3": "About",
+    "link4": "Search"
+  },
+  "begin" : {
+    "title": "Brand",
+    "subtitle": "Look collection"
+  },
+  "collection": {
+    "title": "NEW <br/> ARRIVAL",
+    "link": "Look collection"
+  },
+  "popular": {
+    "title": "Populars"
+  },
+  "about": {
+    "title": "About"
+  },
+  "catalog": {
+    "menu1": "Main",
+    "aside1": "WOMEN",
+    "aside2": "MEN",
+    "aside3": "T-Short",
+    "aside4": "Sweatshirts",
+    "aside5": "Pants",
+    "aside6": "Shoes",
+    "price": "Price",
+    "ascending": "Ascending",
+    "descending": "Descending",
+    "brand": "Brand",
+    "size": "Size",
+    "reset": "Reset"
+  },
+  "cart": {
+    "title": "Your cart is empty",
+    "text": "Add something to save time and make <br/> shopping even more enjoyable.",
+    "btn": "Go to catalog"
+  },
+  "product": {
+    "btn1": "add to cart",
+    "btn2": " buy in one click"
+  },
+  "footer": {
+    "title": "STAY UPDATED",
+    "link1": "About",
+    "link2": "Common Questions",
+    "link3": "Brands",
+    "text1": "All rights reserved",
+    "text2": "Design and development:"
+  }
+}
