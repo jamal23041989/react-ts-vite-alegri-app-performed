@@ -3,15 +3,19 @@ import { useTranslation } from 'react-i18next'
 
 import './Header.scss'
 
-import LogoIcon from '../../../assets/images/logo.svg'
-import UserIcon from '../../../assets/images/header-user.svg'
-import LikeIcon from '../../../assets/images/header-like.svg'
-import CartIcon from '../../../assets/images/header-cart.svg'
+import LogoIcon from '../../assets/images/logo.svg'
+import UserIcon from '../../assets/images/header-user.svg'
+import LikeIcon from '../../assets/images/header-like.svg'
+import CartIcon from '../../assets/images/header-cart.svg'
 
 type Props = {}
 
 export const Header = (props: Props) => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+
+  const changeLanguege = (lang: any) => {
+    i18n.changeLanguage(lang)
+  }
 
   return (
     <header className="header">
@@ -39,12 +43,18 @@ export const Header = (props: Props) => {
           </div>
           <div className="header__right">
             <div className="header__lang">
-              <a className="header__lang-link" href="">
+              <p
+                className={`header__lang-link ${i18n.language === 'ru' ? 'active' : ''}`}
+                onClick={() => changeLanguege('ru')}
+              >
                 RU
-              </a>
-              <a className="header__lang-link" href="">
+              </p>
+              <p
+                className={`header__lang-link ${i18n.language === 'en' ? 'active' : ''}`}
+                onClick={() => changeLanguege('en')}
+              >
                 EN
-              </a>
+              </p>
             </div>
             <div className="header__icons">
               <a className="header__icons-link" href="">

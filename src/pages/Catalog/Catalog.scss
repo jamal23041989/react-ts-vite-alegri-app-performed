@@ -1,0 +1,15 @@
+.catalog {
+  padding: 8px 0 50px;
+
+  &__content {
+    display: flex;
+    column-gap: 25px;
+    margin-top: 25px;
+  }
+
+  &__right {
+    width: 80%;
+    height: 100vh;
+    background: black;
+  }
+}

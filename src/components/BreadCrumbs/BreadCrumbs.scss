@@ -1,0 +1,22 @@
+.breadCrumbs {
+  display: flex;
+  column-gap: 19px;
+
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    color: #0f303f;
+    position: relative;
+
+    &:not(&:first-child)::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #0f303f;
+      top: 50%;
+      left: -10px;
+    }
+  }
+}

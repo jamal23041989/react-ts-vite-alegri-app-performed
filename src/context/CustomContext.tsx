@@ -1,11 +1,34 @@
-import { createContext, ReactNode } from 'react'
-
-export const CustomContext = createContext({})
+import { createContext, ReactNode, useState } from 'react'
 
 type ContextProps = { children?: ReactNode }
+interface MyContextValueType {
+  gender: string
+  category: string
+  changeGender: any
+  changeCategory: any
+}
+
+export const CustomContext = createContext<MyContextValueType>({
+  gender: '',
+  category: '',
+  changeGender: '',
+  changeCategory: '',
+})
 
 const Context = ({ children }: ContextProps) => {
-  return <CustomContext.Provider value={1}>{children}</CustomContext.Provider>
+  const [gender, setGender] = useState('women')
+  const [category, setCategory] = useState('t-short')
+
+  const changeGender = (value: string) => {
+    setGender(value)
+  }
+
+  const changeCategory = (value: string) => {
+    setCategory(value)
+  }
+
+  const value = { gender, category, changeGender, changeCategory }
+  return <CustomContext.Provider value={value}>{children}</CustomContext.Provider>
 }
 
 export default Context
