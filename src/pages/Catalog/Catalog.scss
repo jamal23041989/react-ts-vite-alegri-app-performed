@@ -5,11 +5,18 @@
     display: flex;
     column-gap: 25px;
     margin-top: 25px;
+
+    &-title {
+      font-weight: 500;
+      font-size: 25px;
+      text-transform: uppercase;
+      color: #0f303f;
+      margin-bottom: 45px;
+    }
   }
 
   &__right {
     width: 80%;
     height: 100vh;
-    background: black;
   }
 }

@@ -1,11 +1,10 @@
 import { useContext } from 'react'
 import { CustomContext } from '../../context/CustomContext'
+import { CategoryTitle } from '../'
 import './BreadCrumbs.scss'
 
-type Props = {}
-
-export const BreadCrumbs = (props: Props) => {
-  const { gender, category } = useContext(CustomContext)
+export const BreadCrumbs = () => {
+  const { gender } = useContext(CustomContext)
 
   return (
     <ul className="breadCrumbs">
@@ -15,10 +14,7 @@ export const BreadCrumbs = (props: Props) => {
         {gender === 'men' && 'Мужчины'}
       </li>
       <li className="breadCrumbs__item">
-        {category === 't-shorts' && 'Футболки'}
-        {category === 'sweatshirts' && 'Кофты'}
-        {category === 'pants' && 'Штаны'}
-        {category === 'shoes' && 'Обувь'}
+        <CategoryTitle />
       </li>
     </ul>
   )
