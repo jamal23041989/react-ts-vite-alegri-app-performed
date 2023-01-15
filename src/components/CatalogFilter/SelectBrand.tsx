@@ -7,10 +7,10 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { CustomContext } from '../../context/CustomContext'
 
 export const SelectBrand = () => {
-  const { brand, setBrand, brands, setBrands } = useContext(CustomContext)
+  const { dispatch, state } = useContext(CustomContext)
 
   const handleChange = (e: SelectChangeEvent) => {
-    setBrand(e.target.value as string)
+    dispatch({ type: 'change_brand', payload: e.target.value })
   }
 
   return (
@@ -20,11 +20,11 @@ export const SelectBrand = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={brand}
+          value={state.catalog.brand}
           label="Бренд"
           onChange={handleChange}
         >
-          {brands.map((item: string[]) => (
+          {state.catalog.brands.map((item: string[]) => (
             <MenuItem key={`${item}`} value={item}>
               {item}
             </MenuItem>

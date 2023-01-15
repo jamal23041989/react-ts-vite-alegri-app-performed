@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
@@ -7,10 +7,10 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { CustomContext } from '../../context/CustomContext'
 
 export const SelectPrice = () => {
-  const { price, setPrice } = useContext(CustomContext)
+  const { dispatch, state } = useContext(CustomContext)
 
   const handleChange = (e: SelectChangeEvent) => {
-    setPrice(e.target.value as string)
+    dispatch({ type: 'change_price', payload: e.target.value })
   }
 
   return (
@@ -20,7 +20,7 @@ export const SelectPrice = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={price}
+          value={state.catalog.price}
           label="Price"
           onChange={handleChange}
         >

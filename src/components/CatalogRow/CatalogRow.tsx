@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { CustomContext } from '../../context/CustomContext'
@@ -14,19 +14,22 @@ interface ProductsProps {
 }
 
 export const CatalogRow = () => {
-  const { products, size, page, setPage } = useContext(CustomContext)
-
+  const { dispatch, state } = useContext(CustomContext)
   const { i18n } = useTranslation()
+
+  if (state.catalog.products.error.length) {
+    return <h2>{state.catalog.products.error.message}</h2>
+  }
 
   return (
     <>
       <div className="catalog__row">
-        {products.data
+        {state.catalog.products.data
           .filter((item: { sizes: [{ size: string; inStock: string }] }) =>
-            size ? item?.sizes.find(el => el?.size == size)?.inStock : item
+            state.catalog.size ? item?.sizes.find(el => el?.size == state.catalog.size)?.inStock : item
           )
           .filter((item: { sizes: [{ size: string; inStock: string }] }, idx: number) => {
-            return page === 1 ? idx < 6 : idx < page * 6 && idx > page * 6 - 7
+            return state.catalog.page === 1 ? idx < 6 : idx < state.catalog.page * 6 && idx > state.catalog.page * 6 - 7
           })
           .map((item: ProductsProps) => (
             <div key={item.id} className="catalog__card">
@@ -45,8 +48,12 @@ export const CatalogRow = () => {
       </div>
 
       <ul className="catalog__pagination">
-        {new Array(Math.ceil(products.dataLength / 6)).fill(null).map((item, idx) => (
-          <li key={idx} className={`catalog__page ${page === idx + 1 ? 'active' : ''}`} onClick={() => setPage(idx + 1)}>
+        {new Array(Math.ceil(state.catalog.products.dataLength / 6)).fill(null).map((item, idx) => (
+          <li
+            key={idx}
+            className={`catalog__page ${state.catalog.page === idx + 1 ? 'active' : ''}`}
+            onClick={() => dispatch({ type: 'change_page', payload: idx + 1 })}
+          >
             {idx + 1}
           </li>
         ))}

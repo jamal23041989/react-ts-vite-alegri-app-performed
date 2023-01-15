@@ -7,17 +7,18 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { CustomContext } from '../../context/CustomContext'
 
 export const SelectSize = () => {
-  const { category, size, setSize, products, setProducts, setPage } = useContext(CustomContext)
+  const { dispatch, state } = useContext(CustomContext)
 
   const handleChange = (e: SelectChangeEvent) => {
-    setSize(e.target.value as string)
-    setProducts({
-      ...products,
-      dataLength: products.data.filter((item: { sizes: [{ size: string; inStock: string }] }) =>
-        e.target.value ? item?.sizes.find(el => el?.size == e.target.value)?.inStock : item
-      ).length,
+    dispatch({
+      type: 'change_size',
+      payload: {
+        size: e.target.value,
+        length: state.catalog.products.data.filter((item: { sizes: [{ size: string; inStock: string }] }) =>
+          e.target.value ? item?.sizes.find(el => el?.size == e.target.value)?.inStock : item
+        ).length,
+      },
     })
-    setPage(1)
   }
 
   return (
@@ -25,11 +26,11 @@ export const SelectSize = () => {
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Размер</InputLabel>
 
-        {category === 'shoes' ? (
+        {state.catalog.category === 'shoes' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Размер"
             onChange={handleChange}
           >
@@ -40,11 +41,11 @@ export const SelectSize = () => {
             <MenuItem value="42">42</MenuItem>
             <MenuItem value="">Сбросить</MenuItem>
           </Select>
-        ) : category === 't-short' || category === 'sweatshirts' ? (
+        ) : state.catalog.category === 't-short' || state.catalog.category === 'sweatshirts' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Размер"
             onChange={handleChange}
           >
@@ -55,11 +56,11 @@ export const SelectSize = () => {
             <MenuItem value="XXL">XXL</MenuItem>
             <MenuItem value="">Сбросить</MenuItem>
           </Select>
-        ) : category === 'pants' ? (
+        ) : state.catalog.category === 'pants' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Размер"
             onChange={handleChange}
           >

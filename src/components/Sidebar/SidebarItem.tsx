@@ -8,10 +8,13 @@ type SidebarItemProps = {
 }
 
 export const SidebarItem = ({ text, value }: SidebarItemProps) => {
-  const { category, changeCategory } = useContext(CustomContext)
+  const { state, changeCategory } = useContext(CustomContext)
 
   return (
-    <li className={`sidebar__menu-item ${category === value ? 'active' : ''}`} onClick={() => changeCategory(value)}>
+    <li
+      className={`sidebar__menu-item ${state.catalog.category === value ? 'active' : ''}`}
+      onClick={() => changeCategory(value)}
+    >
       {text}
     </li>
   )

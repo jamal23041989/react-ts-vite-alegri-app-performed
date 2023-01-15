@@ -4,18 +4,22 @@ import { SidebarItem } from './SidebarItem'
 
 import './Sidebar.scss'
 
-type Props = {}
-
-export const Sidebar = (props: Props) => {
-  const { gender, changeGender } = useContext(CustomContext)
+export const Sidebar = () => {
+  const { state, changeGender } = useContext(CustomContext)
 
   return (
     <aside className="sidebar">
       <div className="sidebar__lang">
-        <p className={`sidebar__lang-item ${gender === 'woman' ? 'active' : ''}`} onClick={() => changeGender('woman')}>
+        <p
+          className={`sidebar__lang-item ${state.catalog.gender === 'woman' ? 'active' : ''}`}
+          onClick={() => changeGender('woman')}
+        >
           Женщины
         </p>
-        <p className={`sidebar__lang-item ${gender === 'men' ? 'active' : ''}`} onClick={() => changeGender('men')}>
+        <p
+          className={`sidebar__lang-item ${state.catalog.gender === 'men' ? 'active' : ''}`}
+          onClick={() => changeGender('men')}
+        >
           Мужчины
         </p>
       </div>

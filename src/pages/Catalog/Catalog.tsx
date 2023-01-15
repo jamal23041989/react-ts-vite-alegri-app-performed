@@ -4,11 +4,11 @@ import { CustomContext } from '../../context/CustomContext'
 import './Catalog.scss'
 
 export const Catalog = () => {
-  const { category, getProducts, gender, price, brand } = useContext(CustomContext)
+  const { getProducts, state } = useContext(CustomContext)
 
   useEffect(() => {
     getProducts()
-  }, [gender, category, price, brand])
+  }, [state.catalog.gender, state.catalog.category, state.catalog.price, state.catalog.brand])
 
   return (
     <section className="catalog">
