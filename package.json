@@ -11,6 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.4",
     "@types/i18n": "^0.13.6",
     "axios": "^1.2.2",
     "concurrently": "^7.6.0",

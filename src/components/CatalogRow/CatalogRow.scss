@@ -6,11 +6,13 @@
 }
 
 .catalog__card {
-  width: calc(33.333%);
+  width: calc(32%);
   text-align: center;
 
   &-img {
     width: 100%;
+    height: 500px;
+    object-fit: cover;
   }
 
   &-title {

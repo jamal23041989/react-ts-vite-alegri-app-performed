@@ -12,7 +12,7 @@ export const Sidebar = (props: Props) => {
   return (
     <aside className="sidebar">
       <div className="sidebar__lang">
-        <p className={`sidebar__lang-item ${gender === 'women' ? 'active' : ''}`} onClick={() => changeGender('women')}>
+        <p className={`sidebar__lang-item ${gender === 'woman' ? 'active' : ''}`} onClick={() => changeGender('woman')}>
           Женщины
         </p>
         <p className={`sidebar__lang-item ${gender === 'men' ? 'active' : ''}`} onClick={() => changeGender('men')}>

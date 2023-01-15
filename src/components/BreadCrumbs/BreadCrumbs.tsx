@@ -10,7 +10,7 @@ export const BreadCrumbs = () => {
     <ul className="breadCrumbs">
       <li className="breadCrumbs__item">Главная</li>
       <li className="breadCrumbs__item">
-        {gender === 'women' && 'Женщины'}
+        {gender === 'woman' && 'Женщины'}
         {gender === 'men' && 'Мужчины'}
       </li>
       <li className="breadCrumbs__item">

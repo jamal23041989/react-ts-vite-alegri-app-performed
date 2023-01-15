@@ -1,0 +1,10 @@
+.filter {
+  display: flex;
+  padding-right: 100px;
+  column-gap: 7px;
+  margin-bottom: 25px;
+
+  &__select {
+    width: 25%;
+  }
+}
