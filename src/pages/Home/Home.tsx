@@ -1,7 +1,13 @@
+import { About, Begin, Collection, Popular } from '../../components'
 import './Home.scss'
 
-type Props = {}
-
-export const Home = (props: Props) => {
-  return <div>Home</div>
+export const Home = () => {
+  return (
+    <div>
+      <Begin />
+      <Collection />
+      <Popular />
+      <About />
+    </div>
+  )
 }

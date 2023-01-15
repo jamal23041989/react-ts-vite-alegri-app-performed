@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Layout } from './components'
-import { About, Catalog, Home, NotFound } from './pages'
+import { About, Catalog, Home, NotFound, Product } from './pages'
 import './utils/i18n'
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="catalog" element={<Catalog />} />
+            <Route path="product/:id" element={<Product />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

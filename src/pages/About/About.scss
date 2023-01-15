@@ -1,0 +1,27 @@
+.about {
+  background: #254a5a;
+  padding: 132px 0 137px;
+  color: #eae9e8;
+  position: relative;
+  &__info {
+    width: 40%;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 55px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+  &__right-img {
+    position: absolute;
+    top: 44px;
+    right: 192px;
+  }
+}

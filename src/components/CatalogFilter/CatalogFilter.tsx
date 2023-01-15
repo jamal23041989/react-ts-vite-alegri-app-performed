@@ -17,10 +17,10 @@ export const CatalogFilter = (props: Props) => {
         <SelectPrice />
       </div>
       <div className="filter__select">
-        <SelectBrand />
+        <BasicSelect />
       </div>
       <div className="filter__select">
-        <BasicSelect />
+        <SelectBrand />
       </div>
     </div>
   )

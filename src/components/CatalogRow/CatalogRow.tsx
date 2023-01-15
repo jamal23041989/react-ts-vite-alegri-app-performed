@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { CustomContext } from '../../context/CustomContext'
 import './CatalogRow.scss'
 
@@ -29,7 +30,9 @@ export const CatalogRow = () => {
           })
           .map((item: ProductsProps) => (
             <div key={item.id} className="catalog__card">
-              <img src={item.img[0]} alt={item.title} className="catalog__card-img" />
+              <Link to={`/product/${item.id}`}>
+                <img src={item.img[0]} alt={item.title} className="catalog__card-img" />
+              </Link>
               <h3 className="catalog__card-title">{item.title}</h3>
               <p className="catalog__card-category">{item.category}</p>
               <p className="catalog__card-brand">{item.brand}</p>

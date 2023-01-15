@@ -13,8 +13,6 @@ export const SelectBrand = () => {
     setBrand(e.target.value as string)
   }
 
-  console.log(brands)
-
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>

@@ -55,12 +55,14 @@ const Context = ({ children }: ContextProps) => {
   const changeGender = (value: string) => {
     setGender(value)
     setPage(1)
+    setBrand('')
   }
 
   const changeCategory = (value: string) => {
     setCategory(value)
     setSize('')
     setPage(1)
+    setBrand('')
   }
 
   const getProducts = () => {
@@ -68,7 +70,7 @@ const Context = ({ children }: ContextProps) => {
       .get(
         `http://localhost:4444/catalog?gender=${gender}&category=${category}${
           price !== '' ? '&_sort=price&_order=' + price : ''
-        }`
+        }${brand !== '' ? '&brand=' + brand : ''}`
       )
       .then(({ data }) => {
         setProducts({ data: data, dataLength: data.length, error: false })
