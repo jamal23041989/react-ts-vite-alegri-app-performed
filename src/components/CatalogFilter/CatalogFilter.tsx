@@ -1,6 +1,8 @@
 import { BasicSelect } from './BasicSelect'
 import { SelectPrice } from './SelectPrice'
 import { SelectSize } from './SelectSize'
+import { SelectBrand } from './SelectBrand'
+
 import './CatalogFilter.scss'
 
 type Props = {}
@@ -15,7 +17,7 @@ export const CatalogFilter = (props: Props) => {
         <SelectPrice />
       </div>
       <div className="filter__select">
-        <SelectSize />
+        <SelectBrand />
       </div>
       <div className="filter__select">
         <BasicSelect />

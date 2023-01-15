@@ -7,10 +7,17 @@ import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { CustomContext } from '../../context/CustomContext'
 
 export const SelectSize = () => {
-  const { category, size, setSize } = useContext(CustomContext)
+  const { category, size, setSize, products, setProducts, setPage } = useContext(CustomContext)
 
   const handleChange = (e: SelectChangeEvent) => {
     setSize(e.target.value as string)
+    setProducts({
+      ...products,
+      dataLength: products.data.filter((item: { sizes: [{ size: string; inStock: string }] }) =>
+        e.target.value ? item?.sizes.find(el => el?.size == e.target.value)?.inStock : item
+      ).length,
+    })
+    setPage(1)
   }
 
   return (
