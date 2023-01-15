@@ -40,7 +40,7 @@ export const Product = () => {
       <div className="container">
         <BreadCrumbs />
       </div>
-      <div className="container-small">
+      <div className="product__container">
         <div className="product__row">
           <ProductInfo product={product} />
           <ProductSlide product={product} />

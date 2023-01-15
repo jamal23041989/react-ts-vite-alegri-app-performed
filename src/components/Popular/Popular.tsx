@@ -7,7 +7,7 @@ export const Popular = () => {
 
   return (
     <section className="popular">
-      <div className="container-small">
+      <div className="popular__container">
         <h2 className="popular__title">{t('popular.title')}</h2>
         <div className="popular__row">
           <div className="popular__card">

@@ -8,7 +8,7 @@ export const About = () => {
 
   return (
     <section className="about">
-      <div className="container-small">
+      <div className="about__container">
         <div className="about__content">
           <div className="about__info">
             <h2 className="about__title">{t('about.title')}</h2>
