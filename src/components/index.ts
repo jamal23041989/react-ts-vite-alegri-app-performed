@@ -5,6 +5,7 @@ export * from './CategoryTitle/CategoryTitle'
 export * from './CatalogRow/CatalogRow'
 export * from './CatalogFilter/CatalogFilter'
 export * from './ProductInfo/ProductInfo'
+export * from './ProductSlide/ProductSlide'
 
 export * from './Begin/Begin'
 export * from './Collection/Collection'
