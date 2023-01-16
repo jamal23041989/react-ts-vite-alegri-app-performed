@@ -1,0 +1,19 @@
+.not-found__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.not-found-title {
+  padding-top: 50px;
+  color: rgb(255, 170, 0);
+  font-size: 30px;
+}
+
+.not-found-link {
+  color: rgb(149, 115, 183);
+  font-size: 20px;
+  font-weight: 900;
+}

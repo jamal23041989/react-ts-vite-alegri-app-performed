@@ -1,4 +1,4 @@
-import { BeginSlide } from '../BeginSlide/BeginSlide'
+import { BeginSlide } from './BeginSlide'
 import './Begin.scss'
 
 export const Begin = () => {

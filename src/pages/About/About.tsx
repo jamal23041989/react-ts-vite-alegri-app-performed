@@ -1,6 +1,5 @@
 import aboutImg from '../../assets/images/about/about.png'
 import { useTranslation } from 'react-i18next'
-
 import './About.scss'
 
 export const About = () => {

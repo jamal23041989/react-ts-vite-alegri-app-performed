@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { CustomContext } from '../../context/CustomContext'
-import './SidebarItem.scss'
 
 type SidebarItemProps = {
   text: string

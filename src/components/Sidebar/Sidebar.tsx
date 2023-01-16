@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { CustomContext } from '../../context/CustomContext'
 import { SidebarItem } from './SidebarItem'
-
 import './Sidebar.scss'
 
 export const Sidebar = () => {

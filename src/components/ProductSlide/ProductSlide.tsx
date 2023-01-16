@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore from 'swiper'
 import { FreeMode, Thumbs } from 'swiper'
+import SwiperCore from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/thumbs'

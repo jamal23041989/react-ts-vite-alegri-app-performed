@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Layout } from './components'
-import { About, Cart, Catalog, Favorites, Home, NotFound, Product, Questions } from './pages'
+import { About, Cart, Catalog, Favorites, Home, Layout, NotFound, Product, Questions } from './pages'
 import './utils/i18n'
 
 const App = () => {

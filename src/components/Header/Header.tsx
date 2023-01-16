@@ -1,17 +1,13 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-
 import { CustomContext } from '../../context/CustomContext'
 import './Header.scss'
 
 export const Header = () => {
   const { state, changeGender } = useContext(CustomContext)
   const { t, i18n } = useTranslation()
-
-  const changeLanguage = (lang: any) => {
-    i18n.changeLanguage(lang)
-  }
+  const changeLanguage = (lang: any) => i18n.changeLanguage(lang)
 
   return (
     <header className="header">

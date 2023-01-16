@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { CustomContext } from '../../context/CustomContext'
-import { CategoryTitle } from '../CategoryTitle/CategoryTitle'
+import { CategoryTitle } from '../CatalogComp/CategoryTitle'
 import './BreadCrumbs.scss'
 
 export const BreadCrumbs = () => {
