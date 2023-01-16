@@ -131,6 +131,7 @@ export const Cart = () => {
               </button>
             </form>
           </div>
+
           <div className="favorites__row cart__right">
             {state.carts.dataLength ? (
               state.carts.data.map((item: any) => (

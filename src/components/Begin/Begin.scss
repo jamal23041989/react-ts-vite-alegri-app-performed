@@ -1,14 +1,20 @@
 .begin {
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   &__content {
     padding: 182px 0 275px;
     text-align: center;
     position: relative;
   }
+
   &__contentSecond {
     width: 30%;
     text-align: center;
     background: #0f303f;
   }
+
   &__img {
     position: absolute;
     top: 0;
@@ -17,6 +23,7 @@
     height: 100%;
     z-index: -1;
   }
+
   &__imgSecond {
     width: 70%;
     height: 100%;
@@ -33,10 +40,12 @@
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 35px;
+
     &-small {
       font-size: 20px;
     }
   }
+
   &__link {
     font-family: sans-serif;
     font-weight: 400;

@@ -1,9 +1,11 @@
 .catalog {
   padding: 8px 0 50px;
+
   &__content {
     display: flex;
     column-gap: 25px;
     margin-top: 25px;
+
     &-title {
       font-weight: 500;
       font-size: 25px;
@@ -12,23 +14,36 @@
       margin-bottom: 45px;
     }
   }
+
   &__right {
     width: 80%;
   }
+
   &__row {
     display: flex;
     column-gap: 15px;
     row-gap: 40px;
     flex-wrap: wrap;
   }
+
   &__card {
     width: calc(33.33333% - 10px);
     text-align: center;
+
+    @media (max-width: 768px) {
+      width: calc(50% - 10px);
+    }
+
+    @media (max-width: 320px) {
+      width: calc(100% - 10px);
+    }
+
     &-img {
       width: 100%;
       object-fit: cover;
       height: 500px;
     }
+
     &-title {
       font-weight: 700;
       font-size: 18px;
@@ -36,6 +51,7 @@
       color: #0f303f;
       margin: 15px 0 5px;
     }
+
     &-category,
     &-brand {
       font-weight: 300;
@@ -44,15 +60,18 @@
       color: #0f303f;
       margin-bottom: 7px;
     }
+
     &-price {
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 0.045em;
       color: #fd5454;
     }
+
     &-block {
       position: relative;
     }
+
     &-like {
       width: 45px;
       height: 45px;
@@ -67,12 +86,14 @@
       cursor: pointer;
     }
   }
+
   &__pagination {
     display: flex;
     margin-top: 30px;
     justify-content: center;
     column-gap: 30px;
   }
+
   &__page {
     width: 40px;
     height: 40px;
@@ -83,6 +104,7 @@
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
+
     &.active,
     &:hover {
       background: black;

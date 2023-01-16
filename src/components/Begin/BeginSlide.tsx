@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
 import { useTranslation } from 'react-i18next'
-import 'swiper/css'
-
 import begin1 from '../../assets/images/begin/beginImg1.png'
 import begin2 from '../../assets/images/begin/beginImg.png'
+import 'swiper/css'
 
 export const BeginSlide = () => {
   const { t } = useTranslation()

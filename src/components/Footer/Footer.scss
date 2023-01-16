@@ -2,12 +2,17 @@
   padding-top: 160px;
   max-height: 305px;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   &__top {
     padding: 65px 0 60px;
     border-top: 1px solid #eae9e8;
     border-bottom: 1px solid #eae9e8;
     text-align: center;
   }
+
   &__title {
     font-weight: 600;
     font-size: 30px;
@@ -15,11 +20,13 @@
     text-transform: uppercase;
     color: #0f303f;
   }
+
   &__form {
     margin: 20px 0 30px;
     display: flex;
     justify-content: center;
     column-gap: 8px;
+
     &-input {
       width: 250px;
       height: 30px;
@@ -27,11 +34,13 @@
       outline: none;
       border-bottom: 1px solid #0f303f;
       text-align: center;
+
       &::placeholder {
         font-weight: 400;
         color: #0f303f;
       }
     }
+
     &-btn {
       padding: 6px;
       border: 1px solid #e64926;
@@ -39,21 +48,25 @@
       cursor: pointer;
     }
   }
+
   &__list {
     display: flex;
     justify-content: center;
     column-gap: 40px;
   }
+
   &__link {
     font-weight: 400;
     font-size: 20px;
     color: #b7c1c5;
   }
+
   &__bottom {
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
   }
+
   &__text {
     font-weight: 400;
     font-size: 12px;

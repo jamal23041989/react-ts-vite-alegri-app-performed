@@ -4,7 +4,16 @@
   column-gap: 7px;
   margin-bottom: 25px;
 
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__select {
     width: 25%;
+
+    @media (max-width: 320px) {
+      width: 150%;
+    }
   }
 }

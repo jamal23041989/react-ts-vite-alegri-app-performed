@@ -2,10 +2,25 @@
   width: 20%;
   height: 400px;
 
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -300px;
+    padding: 0;
+  }
+
   &__lang {
     display: flex;
     width: 100%;
     border-bottom: 1px solid #eae9e8;
+
+    @media (max-width: 320px) {
+      column-gap: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 90px;
+    }
 
     &-item {
       width: 50%;
@@ -43,6 +58,12 @@
   &__menu {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 320px) {
+      display: flex;
+      flex-direction: row;
+      column-gap: 25px;
+    }
 
     &-item {
       cursor: pointer;
