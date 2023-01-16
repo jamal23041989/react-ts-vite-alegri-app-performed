@@ -10,10 +10,6 @@ export const Header = () => {
   const changeLanguage = (lang: any) => i18n.changeLanguage(lang)
   const [burger, setBurger] = useState(false)
 
-  useEffect(() => {
-    setBurger(false)
-  }, [])
-
   return (
     <header className="header">
       <div className="container">

@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CustomContext } from '../../context/CustomContext'
+import { ProductInfoProps, SizesProps } from '../../types'
 import './ProductInfo.scss'
 
-export const ProductInfo = ({ product }: any) => {
+export const ProductInfo = ({ product }: ProductInfoProps) => {
   const { setProductForCarts } = useContext(CustomContext)
   const { t, i18n } = useTranslation()
   const [size, setSize] = useState('')
@@ -18,8 +19,9 @@ export const ProductInfo = ({ product }: any) => {
       </p>
       <p className="product__title-size">Размер</p>
       <ul className="product__list">
-        {product.sizes.map((item: any) => (
+        {product.sizes.map((item: SizesProps) => (
           <li
+            key={item.id}
             style={{
               background: `${size === item.size ? 'black' : 'transparent'} `,
               color: `${size === item.size ? 'white' : 'black'} `,

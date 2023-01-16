@@ -8,6 +8,20 @@ import { CustomContext } from '../../context/CustomContext'
 import cartImg from '../../assets/images/cart/cart.png'
 import './Cart.scss'
 
+interface CartProps {
+  brand: string
+  category: string
+  count: number
+  gender: string
+  id: number
+  img: string[]
+  price: number
+  review: []
+  size: string
+  sizes: [{ id: number; size: string; inStock: number }]
+  title: string
+}
+
 export const Cart = () => {
   const {
     register,
@@ -27,7 +41,7 @@ export const Cart = () => {
       .post('http://localhost:4444/orders', {
         ...data,
         data: state.carts.data,
-        allPrice: state.carts.data.reduce((acc: any, rec: any) => acc + rec.price * rec.count, 0),
+        allPrice: state.carts.data.reduce((acc: number, rec: CartProps) => acc + rec.price * rec.count, 0),
       })
       .then(({ data }) => {
         alert('Данные отправлены')
@@ -134,7 +148,7 @@ export const Cart = () => {
 
           <div className="favorites__row cart__right">
             {state.carts.dataLength ? (
-              state.carts.data.map((item: any) => (
+              state.carts.data.map((item: CartProps) => (
                 <div className="favorites__card">
                   <img src={item.img[0]} alt="" className="favorites__img" />
                   <div className="favorites__card-info">
@@ -190,8 +204,8 @@ export const Cart = () => {
             <span>
               Общая цена :
               {i18n.language === 'ru'
-                ? state.carts.data.reduce((acc: any, rec: any) => acc + rec.price * rec.count, 0) * 83
-                : state.carts.data.reduce((acc: any, rec: any) => acc + rec.price * rec.count, 0)}
+                ? state.carts.data.reduce((acc: number, rec: CartProps) => acc + rec.price * rec.count, 0) * 83
+                : state.carts.data.reduce((acc: number, rec: CartProps) => acc + rec.price * rec.count, 0)}
             </span>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { CustomContext } from '../../context/CustomContext'
-
+import { ProductProps, SizesProps } from '../../types'
 import './CatalogRow.scss'
 
 export const CatalogRow = () => {
@@ -19,12 +19,12 @@ export const CatalogRow = () => {
         {state.catalog.products.data &&
           state.catalog.products.data
             .filter((item: any) =>
-              state.catalog.size ? item.sizes.find((el: any) => el.size == state.catalog.size).inStock : item
+              state.catalog.size ? item.sizes.find((el: SizesProps) => el.size == state.catalog.size).inStock : item
             )
-            .filter((item: any, idx: any) =>
+            .filter((item: ProductProps, idx: number) =>
               state.catalog.page === 1 ? idx < 6 : idx < state.catalog.page * 6 && idx > state.catalog.page * 6 - 7
             )
-            .map((item: any) => (
+            .map((item: ProductProps) => (
               <div key={item.id} className="catalog__card">
                 <div className="catalog__card-block">
                   <Link to={`/product/${item.id}`}>
@@ -33,7 +33,7 @@ export const CatalogRow = () => {
                   <p
                     className="catalog__card-like"
                     onClick={() => {
-                      if (state.favorites.data.filter((el: any) => el.id == item.id).length) {
+                      if (state.favorites.data.filter((el: ProductProps) => el.id == item.id).length) {
                         deleteProductForFavorites(item.id)
                       } else {
                         setProductForFavorites(item.id)
@@ -44,7 +44,9 @@ export const CatalogRow = () => {
                       width="21"
                       height="18"
                       viewBox="0 0 21 18"
-                      fill={`${state.favorites.data.filter((el: any) => el.id == item.id).length ? '#ff0000' : 'none'}`}
+                      fill={`${
+                        state.favorites.data.filter((el: ProductProps) => el.id == item.id).length ? '#ff0000' : 'none'
+                      }`}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -69,7 +71,7 @@ export const CatalogRow = () => {
       </div>
       <ul className="catalog__pagination">
         {Math.ceil(state.catalog.products.dataLength / 6) > 1 &&
-          new Array(Math.ceil(state.catalog.products.dataLength / 6)).fill(null).map((item, idx) => (
+          new Array(Math.ceil(state.catalog.products.dataLength / 6)).fill(null).map((_, idx) => (
             <li
               onClick={() => dispatch({ type: 'change_page', payload: idx + 1 })}
               key={idx}

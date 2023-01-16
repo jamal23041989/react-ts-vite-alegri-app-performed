@@ -1,5 +1,6 @@
 import { QuestionsItem } from '../../components/'
 import { questionsData } from '../../assets/data/questionData.js'
+import { QuestionProps } from '../../types'
 import './Question.scss'
 
 export const Questions = () => {
@@ -16,7 +17,7 @@ export const Questions = () => {
         <div className="questions__row">
           <ul className="questions__list">
             <li className="questions__list-title">ПОКУПКИ</li>
-            {questionsData.map((item: any) => (
+            {questionsData.map((item: QuestionProps) => (
               <QuestionsItem item={item} />
             ))}
           </ul>

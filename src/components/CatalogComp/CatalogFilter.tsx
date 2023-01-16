@@ -2,12 +2,9 @@ import { BasicSelect } from './BasicSelect'
 import { SelectPrice } from './SelectPrice'
 import { SelectSize } from './SelectSize'
 import { SelectBrand } from './SelectBrand'
-
 import './CatalogFilter.scss'
 
-type Props = {}
-
-export const CatalogFilter = (props: Props) => {
+export const CatalogFilter = () => {
   return (
     <div className="filter">
       <div className="filter__select">

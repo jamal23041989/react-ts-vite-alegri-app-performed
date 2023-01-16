@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { QuestionsItemProps } from '../../types'
 import './QuestionsItem.scss'
 
-export const QuestionsItem = ({ item }: any) => {
+export const QuestionsItem = ({ item }: QuestionsItemProps) => {
   const [accordion, setAccordion] = useState(false)
 
   return (

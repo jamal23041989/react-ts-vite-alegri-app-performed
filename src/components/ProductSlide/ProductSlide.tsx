@@ -5,9 +5,10 @@ import SwiperCore from 'swiper'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/thumbs'
+import { ProductInfoProps } from '../../types'
 import './ProductSlide.scss'
 
-export const ProductSlide = ({ product }: any) => {
+export const ProductSlide = ({ product }: ProductInfoProps) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>()
 
   return (

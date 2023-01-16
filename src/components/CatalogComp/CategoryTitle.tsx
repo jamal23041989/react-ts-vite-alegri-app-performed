@@ -5,6 +5,7 @@ import { CustomContext } from '../../context/CustomContext'
 export const CategoryTitle = () => {
   const { state } = useContext(CustomContext)
   const { t } = useTranslation()
+
   return (
     <span>
       {state.catalog.category === 't-short' && `${t('catalog.aside3')}`}

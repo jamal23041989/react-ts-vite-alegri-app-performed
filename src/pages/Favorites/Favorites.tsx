@@ -3,6 +3,18 @@ import { useTranslation } from 'react-i18next'
 import { CustomContext } from '../../context/CustomContext'
 import './Favorites.scss'
 
+interface FavoritesProps {
+  brand: string
+  category: string
+  gender: string
+  id: number | string
+  img: string[]
+  price: number
+  review: []
+  sizes: [{ id: number | string; inStock: number | string; size: string }]
+  title: string
+}
+
 export const Favorites = () => {
   const { state, deleteProductForFavorites } = useContext(CustomContext)
   const { i18n } = useTranslation()
@@ -11,7 +23,7 @@ export const Favorites = () => {
     <section className="favorites">
       <div className="favorites__container">
         <div className="favorites__row">
-          {state.favorites.data.map((item: any) => (
+          {state.favorites.data.map((item: FavoritesProps) => (
             <div className="favorites__card">
               <img src={item.img[0]} alt="" className="favorites__img" />
               <div className="favorites__card-info">
