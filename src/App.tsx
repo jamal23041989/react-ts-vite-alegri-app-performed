@@ -1,8 +1,7 @@
 import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import { Layout } from './components'
-import { About, Cart, Catalog, Favorites, Home, NotFound, Product } from './pages'
+import { About, Cart, Catalog, Favorites, Home, NotFound, Product, Questions } from './pages'
 import './utils/i18n'
 
 const App = () => {
@@ -17,6 +16,7 @@ const App = () => {
             <Route path="product/:id" element={<Product />} />
             <Route path="cart" element={<Cart />} />
             <Route path="favorites" element={<Favorites />} />
+            <Route path="questions" element={<Questions />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

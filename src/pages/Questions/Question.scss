@@ -1,0 +1,116 @@
+.questions {
+  &__title {
+    font-weight: 500;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #0F303F;
+    margin: 23px 0 40px;
+  }
+  &__row {
+    display: flex;
+    column-gap: 70px;
+  }
+
+  &__form {
+    width: 35%;
+    height: 440px;
+    padding: 28px 25px;
+    background: #EAE9E8;
+    &-title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      text-transform: uppercase;
+      color: #0F303F;
+      margin-bottom: 23px;
+    }
+    &-block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+    }
+    &-input {
+      height: 40px;
+      background: transparent;
+      padding-bottom: 5px;
+      border: none;
+      border-bottom: 1px solid #254A5A;
+      outline: none;
+    }
+    &-ques {
+      font-weight: 400;
+      font-size: 14px;
+      color: #0F303F;
+    }
+    &-area {
+      height: 100px;
+      border: 1px solid #254A5A;
+      background: transparent;
+      padding: 5px 10px;
+      resize: none;
+      outline: none;
+    }
+    &-btn {
+      padding: 14px 20px;
+      background: #E64926;
+      border: 1px solid #E64926;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #EAE9E8;
+    }
+  }
+
+  &__list {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    &-title {
+      font-weight: 800;
+      font-size: 14px;
+      color: #0F303F;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+    border-top: 1px solid #EAE9E8;
+    &:last-child{
+      border-bottom: 1px solid #EAE9E8;
+    }
+
+    padding: 15px 0;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        cursor: pointer;
+        font-size: 30px;
+        transition: .3s;
+      }
+      .close {
+        transform: rotate(45deg);
+        transition: .3s;
+      }
+    }
+    &-title {
+      font-weight: 800;
+      font-size: 16px;
+      color: #0F303F;
+    }
+    &-bottom {
+      display: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: #0F303F;
+      opacity: 0.7;
+    }
+  }
+}

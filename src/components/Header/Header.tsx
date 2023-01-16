@@ -6,7 +6,7 @@ import { CustomContext } from '../../context/CustomContext'
 import './Header.scss'
 
 export const Header = () => {
-  const { state } = useContext(CustomContext)
+  const { state, changeGender } = useContext(CustomContext)
   const { t, i18n } = useTranslation()
 
   const changeLanguage = (lang: any) => {
@@ -47,10 +47,10 @@ export const Header = () => {
             </Link>
           </h1>
           <div className="header__menu">
-            <Link className="header__menu-link" to="/catalog">
+            <Link className="header__menu-link" to="/catalog" onClick={() => changeGender('woman')}>
               {t('header.link1')}
             </Link>
-            <Link className="header__menu-link" to="/catalog">
+            <Link className="header__menu-link" to="/catalog" onClick={() => changeGender('men')}>
               {t('header.link2')}
             </Link>
             <Link className="header__menu-link" to="/about">
