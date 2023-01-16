@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CustomContext } from '../../context/CustomContext'
-
 import './ProductInfo.scss'
 
 export const ProductInfo = ({ product }: any) => {
-  const {} = useContext(CustomContext)
+  const { setProductForCarts } = useContext(CustomContext)
   const { t, i18n } = useTranslation()
   const [size, setSize] = useState('')
 
@@ -21,7 +20,6 @@ export const ProductInfo = ({ product }: any) => {
       <ul className="product__list">
         {product.sizes.map((item: any) => (
           <li
-            key={`${item.id}`}
             style={{
               background: `${size === item.size ? 'black' : 'transparent'} `,
               color: `${size === item.size ? 'white' : 'black'} `,
@@ -37,7 +35,16 @@ export const ProductInfo = ({ product }: any) => {
       </ul>
       <div className="product__btns">
         <div>
-          <button className="product__btn product__btn_cart" onClick={() => {}}>
+          <button
+            className="product__btn product__btn_cart"
+            onClick={() => {
+              if (size) {
+                setProductForCarts({ ...product, size })
+              } else {
+                alert('Выберите размер')
+              }
+            }}
+          >
             {t('product.btn1')}
           </button>
         </div>

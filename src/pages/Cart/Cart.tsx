@@ -89,7 +89,7 @@ export const Cart = () => {
               <div className="cart__deli">
                 <h3 className="cart__deli-title">Доставка</h3>
                 {address ? (
-                  <p> {changeAddress}</p>
+                  <p>{changeAddress}</p>
                 ) : (
                   <textarea
                     {...register('address', { required: true })}
@@ -187,7 +187,7 @@ export const Cart = () => {
             )}
 
             <span>
-              Общая цена :{' '}
+              Общая цена :
               {i18n.language === 'ru'
                 ? state.carts.data.reduce((acc: any, rec: any) => acc + rec.price * rec.count, 0) * 83
                 : state.carts.data.reduce((acc: any, rec: any) => acc + rec.price * rec.count, 0)}
